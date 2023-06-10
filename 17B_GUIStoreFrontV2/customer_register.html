@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer Register</title>
+    </head>
+    <body>
+        <h2>Customer Register</h2>
+        <form action="php_scripts/customer_register_process.php" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Register">
+        </form>
+        <button onclick="location.href = 'customer_login.html'">Login</button>
+        <script>
+            window.onload = function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error) {
+                    alert(decodeURIComponent(error));
+                }
+            }
+        </script>
+    </body>
+</html>

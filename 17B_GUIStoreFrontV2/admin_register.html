@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Register</title>
+    </head>
+    <body>
+        <h2>Admin Register</h2>
+        <form action="php_scripts/admin_register_process.php" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="password">Admin Key:</label><br>
+            <input type="password" id="admin_key" name="admin_key" required><br>
+            <input type="submit" value="Register">
+        </form>
+        <script>
+            window.onload = function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error) {
+                    alert(decodeURIComponent(error));
+                }
+            }
+        </script>
+    </body>
+</html>
